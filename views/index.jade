@@ -1,0 +1,35 @@
+extends layout
+
+block content
+	#content
+		#optionsPanel
+			.row(style={'text-align': 'center', 'font-size': '20px', 'font-weight': 'bold', 'color': 'rgb(108, 191, 82)'}) Options Panel
+			form#options(action='/do_the_q_learning', method='POST')
+				.row
+					label(for=map_file)= 'Map file'
+					input#map_file(type='text', name='map_file', value='mini_map')
+				.row
+					label(for=learning_rate)= 'Learning rate'
+					input#learning_rate(type='text', name='learning_rate', value='0.01')
+				.row
+					label(for=discount)= 'Discount'
+					input#discount(type='text', name='discount', value='0.99')
+				.row
+					label(for=epsilon)= 'Epsilon'
+					input#epsilon(type='text', name='epsilon', value='0.4')
+				.row
+					label(for=train_episodes)= 'Train episodes'
+					input#train_episodes(type='text', name='train_episodes', value='1000')
+				.row
+					label(for=eval_every)= 'Eval every'
+					input#eval_every(type='text', name='eval_every', value='10')
+				.row
+					label(for=eval_episodes)= 'Eval episodes'
+					input#eval_episodes(type='text', name='eval_episodes', value='10')
+				.row
+					input#reload(type='submit', value='Load Defaults', style={'left':'0'})
+					input#submit(type='submit', value='Run test')
+		#gameboard
+		#graph
+	script(type='application/javascript').
+		document.addEventListener("ready", init());

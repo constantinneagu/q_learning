@@ -1,0 +1,103 @@
+/*
+Relevant CSS classes include:
+
+Labels on the X & Y axes:
+.dygraph-axis-label
+.dygraph-axis-label-x
+.dygraph-axis-label-y
+.dygraph-axis-label-y2
+
+Chart labels, see http://dygraphs.com/tests/styled-chart-labels.html
+.dygraph-title
+.dygraph-xlabel
+.dygraph-ylabel
+.dygraph-y2label
+
+The legend, see http://dygraphs.com/tests/series-highlight.html
+.dygraph-legend
+*/
+
+body {
+  border: 0;
+  margin: 0;
+  font: 400 14px/1.6 "Open Sans",sans-serif;
+}
+.dygraph-title {
+  color: gray;
+}
+
+#content {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: content-box;
+  background-color: rgb(24, 29, 32);
+  border: 0px none;
+  margin: 0px;
+}
+
+#optionsPanel {
+  position: absolute;
+  height: 100vh;
+  left: 0px;
+  width: 20vw;
+}
+
+.row {
+  margin: 1vh;
+  position: relative;
+  background-color: #39424D;
+}
+
+.row input {
+  position: absolute;
+  right: 0;
+  background-color: #181D20;
+  color: #46AFE3;
+  margin: 0;
+  border-color: #343C45;
+  border-style: dashed;
+  text-align: center;
+}
+
+.row label {
+  color: #D99B28;
+  margin-left: 0.5vw;
+}
+
+#submit {
+  background-color: rgb(76, 175, 80);
+  color: rgb(255, 255, 255);
+  box-shadow: 1px 2px 3px rgba(237, 233, 233, 0.36), 0px 1px 2px rgba(255, 252, 252, 0.84);
+  border: 0px none;
+}
+
+#submit:hover {
+  background-color: #ffffff;
+  color: #73AD21;
+  color: #4CAF50;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+#gameboard {
+  position: absolute;
+  height: 100vh;
+  width: 40vw;
+  left: 20vw;
+  color: #C63529;
+}
+
+#graph {
+  height: 320px;
+  width: 480px;
+  position: absolute;
+  left: 60vw;
+}
+
+.dygraph-axis-label {
+  color: #D99B28;
+}
+
+.dygraph-label {
+  color: #D880F7;
+}
