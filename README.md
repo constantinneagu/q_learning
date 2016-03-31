@@ -42,4 +42,4 @@ Choose a simple way to represents your states, so that they can easily be serial
 # Usage
 For console mode, go to the 'algorithm/' folder, open main.js, adjust the options to your taste, and type ```node main.js```.
 
-For web mode, use: ```DEBUG=q_learning:* npm start``` and navigate (in your browser) to ```http://localhost:8080/```
+For web mode, use: ```DEBUG=q_learning:* npm start``` (for Linux & OSX) or ```set DEBUG=myapp:* & npm start``` (for Windows) and navigate (in your browser) to ```http://localhost:8080/```
