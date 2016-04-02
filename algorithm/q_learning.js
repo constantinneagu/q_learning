@@ -23,12 +23,10 @@ function best_action(Q, state, legal_actions) {
 			best_value = Number.NEGATIVE_INFINITY;
 
 	function find_best_action(action) {
-		if (Q[state] == null)
-			Q[state] = {};
-		if (Q[state][action] == null)
-			Q[state][action] = 0;
-		if (Q[state][action] >= best_value) {
-			best_value = Q[state][action];
+		if (Q[[state, action]] == null)
+			Q[[state, action]] = 0;
+		if (Q[[state, action]] >= best_value) {
+			best_value = Q[[state, action]];
 			result = action;
 		}
 	};
@@ -57,10 +55,8 @@ function q_learning(args) {
 			var actions = get_legal_actions(state);
 			var action = epsilon_greedy(Q, state, actions, args.epsilon);
 			// Init accordingly.
-			if (Q[state] == null)
-				Q[state] = {};
-			if (Q[state][action] == null)
-				Q[state][action] = 0;
+			if (Q[[state, action]] == null)
+				Q[[state, action]] = 0;
 			/* apply action and get the next state and the reward
 				new_state has 3 members:
 				- state (the actual new state);
@@ -71,10 +67,10 @@ function q_learning(args) {
 			// Get the best known action that we can do from the new state.
 			var b_action = best_action(Q, new_state.state, get_legal_actions(new_state.state));
 			// Q-Learning formula
-			Q[state][action] = Q[state][action] +
+			Q[[state, action]] = Q[[state, action]] +
 													args.learning_rate * (new_state.reward +
-																								args.discount * Q[new_state.state][b_action] -
-																								Q[state][action]);
+																								args.discount * Q[[new_state.state, b_action]] -
+																								Q[[state, action]]);
 			state = new_state.state;
 			// display current state
 			if (args.verbose) {
